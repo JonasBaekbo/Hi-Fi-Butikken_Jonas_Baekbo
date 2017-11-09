@@ -1,0 +1,31 @@
+.jumbotron h1{
+    text-align: center;
+}
+body{
+    padding-top: 70px;
+}
+input, textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+input[type=submit], button[type=reset]{
+    width:40%;
+    padding: 12px 20px;
+    margin: 0 5%;
+}
+html {
+    overflow-y: scroll;
+  }
+  footer{
+      background-color: #F8F8F8;
+  }
+  #footerkat li{
+      list-style-type: none;
+  }
+  main{
+      margin-bottom: 50px;
+  }
+  footer h2{
+      margin: 0;
+  }

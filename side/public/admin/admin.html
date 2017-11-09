@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hi-Fi butikken - Admin</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="admin.css" type="text/css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost:3000/admin/admin.html">
+                    Hi-Fi Butikken - Admin
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left" method="GET" role="search">
+                    <div class="form-group">
+                        <input type="text" name="q" class="form-control" placeholder="Søg..">
+                    </div>
+                    <button type="submit" class="btn btn-default">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="http://localhost:3000/index.html" target="_blank">Gå til siden</a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Profil
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="">
+                                <a href="">
+                                    <i class="fa fa-user" aria-hidden="true"></i> Din profil</a>
+                            </li>
+                            <li class="dropdown-header">Indstillinger</li>
+                            <li class="">
+                                <a href="#"><i class="fa fa-cog" aria-hidden="true">
+                                    </i> Din profils indstillinger</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Log ud</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid main-container">
+        <div class="col-md-2 sidebar">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active">
+                    <a href="http://localhost:3000/admin/admin.html">Forside</a>
+                </li>
+                <li>
+                    <a href="produkter.html">Produkter</a>
+                </li>
+                <li>
+                    <a href="menu.html">Menu</a>
+                </li>
+                <li>
+                    <a href="kontakt.html">Kontakthenvendelser</a>
+                </li>
+                <li>
+                    <a href="brugere.html">Brugere</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10 content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                        Produkter
+                </div>
+                <div class="panel-body">
+                    <div class="col-xs-12 col-md-12">
+                        <a href="produkter.html">Se alle produkter</a><br>
+                        <a>Ændr et produkt</a><br>
+                        <a>Indsæt et nyt produkt</a><br>
+                        <a>Slet et produkt</a><br>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                            Menu
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-12 col-md-12">
+                            <a>Se alle menupunkter</a><br>
+                            <a>Ændr et menupunkt</a><br>
+                            <a>Indsæt et menupunkt</a><br>
+                            <a>Slet et menupunt</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <i class="fa fa-address-book" aria-hidden="true"></i>
+                                Kontakthenvendelser
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-xs-12 col-md-12">
+                                <a href="kontakt.html">Se og slet kontakthenvendelser</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                            <div class="panel-heading">
+                                    <i class="fa fa-user" aria-hidden="true"></i>                                    
+                                    Brugere
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-xs-12 col-md-12">
+                                    <a>Se alle brugere</a><br>
+                                    <a>Ændr en bruger</a><br>
+                                    <a>Slet en bruger</a>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</body>
+
+</html>

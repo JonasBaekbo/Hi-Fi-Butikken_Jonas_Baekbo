@@ -1,0 +1,17 @@
+{
+  "name": "hi-fi_butik_jonas_baekbo",
+  "version": "1.0.0",
+  "description": "Hi-Fi butik opgave",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^1.4.2",
+    "restify": "^6.0.0",
+    "restify-cors-middleware": "^1.0.1"
+  }
+}
