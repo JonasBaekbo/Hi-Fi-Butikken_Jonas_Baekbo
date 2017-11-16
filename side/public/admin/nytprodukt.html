@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hi-Fi butikken - Admin</title>
+    <title>Hi-Fi butikken - Admin | Rediger produkt</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -79,10 +79,10 @@
                 <li>
                     <a href="http://localhost:3000/admin/admin.html">Forside</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="produkter.html">Produkter</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="kontakt.html">Kontakthenvendelser</a>
                 </li>
             </ul>
@@ -90,10 +90,55 @@
         <div class="col-md-10 content">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Kontakthenvendelser
+                    Rediger produkt
                 </div>
                 <div id="panel-body">
+                    <div id="productForm">
+                        <form enctype="multipart/form-data">
+                            <h2>Opret nyt produkt</h2>
+                            <label>Produkt navn</label>
+                            <input type="text" name="navn" id="navn" value="">
+                            <br>
+                            <label>Produkt beskrivelse</label>
+                            <input type="text" name="beskrivelse" id="beskrivelse" value="">
+                            <br>
+                            <label>Produkt pris</label>
+                            <input type="text" name="pris" id="pris" value="">
+                            <br>
+                            <select name="kategori_id" id="kategori_id">
+                                <option>Vælg kategori</option>
+                                <option value="1">CD afspillere</option>
+                                <option value="2">DVD afspillere</option>
+                                <option value="3">Effektforstærkere</option>
+                                <option value="4">Forforstærkere</option>
+                                <option value="5">Højtalere</option>
+                                <option value="6">Int. Forstærkere</option>
+                                <option value="7">Pladespillere</option>
+                                <option value="8">Rørforstærkere</option>
+                            </select>
+                            <br>
 
+                            <select name="producent_id" id="producent_id">
+                                <option>Vælg producent</option>
+                                <option value="1">Creek Audio Ltd</option>
+                                <option value="2">Exposure</option>
+                                <option value="3">Parasound</option>
+                                <option value="4">Manley</option>
+                                <option value="5">Pro-ject Audio systems</option>
+                                <option value="6">Bösendorfer</option>
+                                <option value="7">Epos Ltd</option>
+                                <option value="8">Harbeth Loudspeakers</option>
+                                <option value="9">Jolida</option>
+
+                            </select>
+                            <input type="file" name="productImage" id="productImage" value="">
+
+                            <button>Gem</button>
+                            <a href="produkter.html" class="button">Annuller</a>
+                            <span id="productsFormError" class="error"></span>
+                            <hr>`;
+                        </form>
+                    </div>
 
                 </div>
             </div>
@@ -104,25 +149,45 @@
         crossorigin="anonymous"></script>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        fetch('http://localhost:1337/kontakt', {
-            'method': 'GET',
-            'headers': {
-                'Authorization': localStorage.getItem('token'),
-                'userID': localStorage.getItem('userid')
-            },
-            'mode': 'cors',
-            'cache': 'default'
-        })
-            .then((response) => {
-                // grib svarets indhold (body) og send det som et json objekt til næste .then()
-                return response.json();
-            })
-            .then((data) => {
-                data.forEach(function (element, index) {
-                    console.log(element);
-                    document.getElementById('panel-body').innerHTML += `<div><p>ID: ${element.ID}</p><p>navn: ${element.Fornavn + element.Efternavn}</p><p>E-Mail: ${element.Email}</p><p>Besked: ${element.Besked}</p><p><a href="http://localhost:1337/kontakt/${element.ID}"><button>Slet?</button></a></p></div>`;
-                }, this);
-            })
+        let productFormButton = document.querySelector("#productForm button");
+        productFormButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            let navn = document.querySelector('#navn').value; // .querySelector tager fat i id'et navn på html siden.
+            let pris = document.querySelector('#pris').value; // .querySelector tager fat i id'et pris på html siden.
+            let beskrivelse = document.querySelector('#beskrivelse').value; // .querySelector tager fat i id'et beskrivelse på html siden.
+            let kategori = document.querySelector('#kategori_id').value; // .querySelector tager fat i id'et kategori_id på html siden.
+            let producent = document.querySelector('#producent_id').value;
+
+
+            if (navn != '' && beskrivelse != '' && !isNaN(pris)) {
+                document.querySelector('#productsFormError').innerHTML = "";
+                let url = `http://localhost:1337/produkt/`;
+                let form = document.querySelector('#productForm form');
+                let data = new FormData(form);
+
+                let init = {
+                    method: 'post',
+                    body: data
+                };
+                let request = new Request(url, init);
+
+                fetch(request)
+                    .then(response => {
+                        // hvis gem handlingen gik fejlfrit igennem, reloades siden
+                        if (response.status == 200) {
+                            window.location.replace(`produkter.html`);
+                        } else {
+                            throw new Error('Produkt blev ikke oprettet');
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            } else {
+                document.querySelector('#productsFormError').innerHTML = "Udfyld venligst alle felter korrekt";
+            }
+
+        });
         document.addEventListener("DOMContentLoaded", event => {
             if (localStorage.getItem('token') === null) {
                 window.location.assign('../login.html');

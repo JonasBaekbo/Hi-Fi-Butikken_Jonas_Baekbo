@@ -30,7 +30,7 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active">
+                            <li>
                                 <a href="index.html">Forside</a>
                             </li>
                             <li>
@@ -50,18 +50,14 @@
         </div>
         <main>
             <div class="row">
-                <div class="jumbotron">
-                    <h1>Velkommen til</h1>
-                    <h1>Hi-Fi butikken</h1>
-                </div>
-                <div class="col-md-6">
-                    <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" id="img0" width="200" height="150">
-                    <div id="content0"></div>
-                </div>
-                <div class="col-md-6">
-                    <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" id="img1" width="200" height="150">
-                    <div id="content1"></div>
-                </div>
+                <form class="loginForm">
+                    <div><label for="username">Brugernavn</label><input type="text" name="username" id="username"></div>
+                    <div><label for="password">Adgangskode</label><input type="password" name="password" id="password"></div>
+                    <button>Log ind!</button>
+                </form>
+                <button id="logud">log ud</button>
+            
+                <script src="./javascripts/loginform.js"></script>
             </div>
         </main>
     </div>

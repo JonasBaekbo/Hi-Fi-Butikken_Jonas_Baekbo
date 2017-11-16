@@ -33,30 +33,6 @@ module.exports = {
      });
   },
 
-   'insertOne': (name, color, next) => {
-      let query = `INSERT INTO fruits SET name = ?, color = ?`;
-
-      db.query(query, [name, color], (err, results) => {
-         if (err) {
-            next(err);
-         } else {
-            next(null, results);
-         }
-      });
-   },
-
-   'updateById': (id, name, color, next) => {
-      let query = `UPDATE fruits SET name = ?, color = ? WHERE id = ?`;
-
-      db.query(query, [name, color, id], (err, results) => {
-         if (err) {
-            next(err);
-         } else {
-            next(null, results);
-         }
-      });
-   },
-
    'deleteById': (id, next) => {
       let query = `DELETE FROM produkter WHERE id = ?`;
 

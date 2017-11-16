@@ -1,6 +1,6 @@
 // frugt-servicen har brug for database adgang
-const db = require('../config/sql').connect();
-db.connect((err) => {
+const mysql = require('../config/sql');
+mysql.connect((err) => {
    if (err) {
       console.log(Date(), err.stack);
       return;
@@ -9,6 +9,7 @@ db.connect((err) => {
 module.exports = {
     'deleteById': (id, next) => {
         let query = `DELETE FROM kontakt WHERE id = ?`;
+        const db = mysql.connect();
   db.query(query, [id], (err, results) => {
            if (err) {
               next(err);
@@ -16,5 +17,6 @@ module.exports = {
               next(null, results);
            }
         });
+        db.end();
      }
   }

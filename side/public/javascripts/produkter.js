@@ -73,7 +73,7 @@ fetch('http://localhost:1337/produkt').then((response) => {
         .then((data) => {
             // nu er json objektet lagt ind i data variablen, udskriv data
             console.log(data);
-            document.getElementById('content').innerHTML =  `<a href="produkt.html">Tilbage til alle produkter</a><br><br><img src="images/${data[0].billede}" alt="${data[0].navn}"><h3>${data[0].navn}</h3><p>Pris: ${data[0].pris}</p><p>Producent: ${data[0].producent}</p><p>Kategori: ${data[0].kategori}</p><p>Beskrivelse:<br> ${data[0].beskrivelse}</p>`;
+            document.getElementById('content').innerHTML =  `<a href="produkt.html">Tilbage til alle produkter</a><br><br><img src="http://localhost:1337/images/${data[0].billede}" alt="${data[0].navn}"><h3>${data[0].navn}</h3><p>Pris: ${data[0].pris}</p><p>Producent: ${data[0].producent}</p><p>Kategori: ${data[0].kategori}</p><p>Beskrivelse:<br> ${data[0].beskrivelse}</p>`;
         })
     }
 document.addEventListener('DOMContentLoaded', function () {

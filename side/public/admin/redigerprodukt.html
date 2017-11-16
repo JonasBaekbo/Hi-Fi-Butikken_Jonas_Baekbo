@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hi-Fi butikken - Admin</title>
+    <title>Hi-Fi butikken - Admin | Rediger produkt</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -76,10 +76,10 @@
     <div class="container-fluid main-container">
         <div class="col-md-2 sidebar">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active">
+                <li>
                     <a href="http://localhost:3000/admin/admin.html">Forside</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="produkter.html">Produkter</a>
                 </li>
                 <li>
@@ -90,43 +90,50 @@
         <div class="col-md-10 content">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                    Produkter
+                    Rediger produkt
                 </div>
-                <div class="panel-body">
-                    <div class="col-xs-12 col-md-12">
-                        <a href="produkter.html">Se alle produkter, rediger produkter og slet produkter</a>
-                        <br>
-                        <a href="nytprodukt.html">Indsæt et nyt produkt</a>
-                        <br>
+                <div id="panel-body">
+                    <div id="productForm">
+                        <form enctype="multipart/form-data">
+                            <h3>Opdatering af produkter </h3>
+                            <input name="navn" type="name" id="opdaternavn" placeholder="Produkt Navn" value="">
+                            <br>
+                            <input name="pris" type="pris" id="opdaterpris" placeholder="Vælg Pris" value="">
+                            <br>
+                            <textarea class="ryk" name="beskrivelse" type="beskrivelse" id="opdaterbeskrivelse" placeholder="Beskrivelse"></textarea>
+                            <br>
+
+                            <select name="kategori_id" id="opdaterkategori_id">
+                                <option>Vælg kategori</option>
+                            </select>
+                            <br>
+
+                            <select name="producent_id" id="opdaterproducent_id" value="">
+                                <option>Vælg producent</option>
+
+                            </select>
+                            <input type="hidden" name="oldProductImage" id="oldProductImage" value="">
+                            <input type="file" name="productImage" id="productImage" value="">
+                            <br>
+                            <br>
+                            <input class="ryknedd indsendknap" type="submit" id="gemmmm">
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-address-book" aria-hidden="true"></i>
-                    Kontakthenvendelser
-                </div>
-                <div class="panel-body">
-                    <div class="col-xs-12 col-md-12">
-                        <a href="kontakt.html">Se og slet kontakthenvendelser</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
-    <script>document.addEventListener("DOMContentLoaded", event => {
-            if (localStorage.getItem('token') === null) {
-                window.location.assign('../login.html');
-            } else {
-                console.log(localStorage.getItem('token'));
-            }
-        })</script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+            <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+            <script src="test.js">
+            </script>
+            <script>document.addEventListener("DOMContentLoaded", event => {
+                    if (localStorage.getItem('token') === null) {
+                        window.location.assign('../login.html');
+                    } else {
+                        console.log(localStorage.getItem('token'));
+                    }
+                })</script>
 </body>
 
 </html>
