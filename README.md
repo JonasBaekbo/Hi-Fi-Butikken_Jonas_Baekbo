@@ -1,6 +1,9 @@
 # Hi-fi Butikken - Jonas Bækbo
 ## Status
 
+DEL 1:
+
+
 Jeg har lavet følgende:
 
 1. Planlægning af mine arbejdsopgaver
@@ -28,3 +31,46 @@ Jeg har lavet følgende:
 Hvad mangler jeg at få lavet?
 1. E/R-diagram
 2. Dokumentation af kode(routes/services og javascript) 
+
+DEL 2:
+
+Jeg har lavet følgende:
+
+1. Funktionsdygtitgt admin panel som indeholder:
+
+__1. CRUD til produkter__
+>1. Create - Lav et nyt produkt
+>2. Read - Find alle produkter
+>3. Update - Ændr/opdater et produkt
+>4. Delete - Slet et produkt
+
+> Produkter har også mulighed for billede upload
+
+__2. Sletning af kontakthenvendelser__
+
+2. Funktionsdygtigt login
+> Kan logge ind og logge ud af admin panelet
+
+> Lukker folk ude der ikke har adgang til admin panelet
+
+> Lukker folk ude fra routes som de ikke skal have adgang til (f.eks. oprettelse af produkter, opdatering af produkter og sletning af produkter)
+
+Hvad mangler jeg at få lavet?
+
+1. Bruger side
+> Man skal kunnet oprette nye brugere
+> Rettigheder til forskellige brugere
+
+> Rette i bruger information(navn, password, evt. beskrivelse af sig selv)
+
+> Glemt password?
+
+2. Tilpasning af menu
+> Tilpasning af menupunkter 
+
+3. Tilpasning af indhold på forside og kontaktside
+> Tilpas forsidens indhold
+
+> Dynamisk kontaktinformation på kontaktside fra database
+
+> Tilpas kontaktinformation på kontaktside
