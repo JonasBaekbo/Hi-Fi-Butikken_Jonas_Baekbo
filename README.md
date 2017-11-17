@@ -74,3 +74,104 @@ Hvad mangler jeg at få lavet?
 > Dynamisk kontaktinformation på kontaktside fra database
 
 > Tilpas kontaktinformation på kontaktside
+
+__TIDSPLAN__
+
+
+UGE 1:
+
+Mandag
+
+08:10 - Tidsplan
+
+10:00 - Planlægning
+
+12:00 - Html/css
+
+Tirsdag
+
+08:10 - Html/css
+
+10:00 - Html/css
+
+12:00 - Html/css
+
+13:30 - Crud produkter
+
+Onsdag 
+
+08:10 - Crud produkter
+
+10:00 - Crud produkter
+
+12:00 - Crud produkter
+
+13:30 - Crud produkter
+
+Torsdag
+
+08:10 - Crud kontakt
+
+10:00 - Crud kontakt
+
+12:00 - Crud kontakt
+
+13:30 - Crud kontakt
+
+Fredag
+
+08:10 - Crud produkter
+
+10:00 - Crud produkter
+
+12:00 - Crud produkter
+
+
+UGE 2:
+
+Mandag
+
+08:10 - Crud produkter
+
+10:00 - Crud produkter
+
+12:00 - Crud produkter
+
+
+Tirsdag
+
+08:10 - Crud produkter
+
+10:00 - Crud produkter
+
+12:00 - Crud produkter
+
+13:30 - Crud produkter
+
+Onsdag 
+
+08:10 - Login
+
+10:00 - Login
+
+12:00 - Login
+
+13:30 - Login
+
+
+Torsdag
+
+08:10 - Login
+
+10:00 - Login
+
+12:00 - Login
+
+13:30 - Login
+
+
+Fredag
+
+08:10 - Kommentering af kode og tilretning af kode
+
+10:00 - Selvevaluering og tilretning af tidsplan
