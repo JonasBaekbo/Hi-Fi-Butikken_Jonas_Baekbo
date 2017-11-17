@@ -149,17 +149,17 @@
         crossorigin="anonymous"></script>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        let productFormButton = document.querySelector("#productForm button");
-        productFormButton.addEventListener('click', function (event) {
-            event.preventDefault();
-            let navn = document.querySelector('#navn').value; // .querySelector tager fat i id'et navn på html siden.
-            let pris = document.querySelector('#pris').value; // .querySelector tager fat i id'et pris på html siden.
-            let beskrivelse = document.querySelector('#beskrivelse').value; // .querySelector tager fat i id'et beskrivelse på html siden.
-            let kategori = document.querySelector('#kategori_id').value; // .querySelector tager fat i id'et kategori_id på html siden.
-            let producent = document.querySelector('#producent_id').value;
+        let productFormButton = document.querySelector("#productForm button"); // Let variabel med knappen i formularen
+        productFormButton.addEventListener('click', function (event) { //Når det bliver klikket gør følgende
+            event.preventDefault(); // Formularen skal ikke opføre sig som den plejer
+            let navn = document.querySelector('#navn').value; // .querySelector tager fat i id'et navns value på html siden.
+            let pris = document.querySelector('#pris').value; // .querySelector tager fat i id'et pris' value på html siden.
+            let beskrivelse = document.querySelector('#beskrivelse').value; // .querySelector tager fat i id'et beskrivelses value på html siden.
+            let kategori = document.querySelector('#kategori_id').value; // .querySelector tager fat i id'et kategori_ids value på html siden.
+            let producent = document.querySelector('#producent_id').value; // .querySelector tager fat i id'et producent_ids value på html siden.
 
 
-            if (navn != '' && beskrivelse != '' && !isNaN(pris)) {
+            if (navn != '' && beskrivelse != '' && !isNaN(pris)) { // Hvis der står noget i navn, beskrivelse og hvis pris er et tal
                 document.querySelector('#productsFormError').innerHTML = "";
                 let url = `http://localhost:1337/produkt/`;
                 let form = document.querySelector('#productForm form');
@@ -170,10 +170,10 @@
                     body: data
                 };
                 let request = new Request(url, init);
-
+                //udsend form-data til bodyen og lav en request med HTTP metoden post
                 fetch(request)
                     .then(response => {
-                        // hvis gem handlingen gik fejlfrit igennem, reloades siden
+                        // hvis gem handlingen gik fejlfrit igennem, redirect til produkter.html
                         if (response.status == 200) {
                             window.location.replace(`produkter.html`);
                         } else {
@@ -189,8 +189,8 @@
 
         });
         document.addEventListener("DOMContentLoaded", event => {
-            if (localStorage.getItem('token') === null) {
-                window.location.assign('../login.html');
+            if (localStorage.getItem('token') === null) {//Hvis local storage ikke indeholder token udfør
+                window.location.assign('../login.html'); // Redirect til login.html
             } else {
                 console.log(localStorage.getItem('token'));
             }

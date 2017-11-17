@@ -128,8 +128,8 @@
             <script src="test.js">
             </script>
             <script>document.addEventListener("DOMContentLoaded", event => {
-                    if (localStorage.getItem('token') === null) {
-                        window.location.assign('../login.html');
+                    if (localStorage.getItem('token') === null) {//Hvis local storage ikke indeholder token udfør
+                        window.location.assign('../login.html'); // Redirect til login.html
                     } else {
                         console.log(localStorage.getItem('token'));
                     }

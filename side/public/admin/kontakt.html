@@ -104,7 +104,7 @@
         crossorigin="anonymous"></script>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        fetch('http://localhost:1337/kontakt', {
+        fetch('http://localhost:1337/kontakt', { // udtræk data fra http://localhost:1337/kontakt via GET HTTP metoden
             'method': 'GET',
             'headers': {
                 'Authorization': localStorage.getItem('token'),
@@ -120,12 +120,12 @@
             .then((data) => {
                 data.forEach(function (element, index) {
                     console.log(element);
-                    document.getElementById('panel-body').innerHTML += `<div><p>ID: ${element.ID}</p><p>navn: ${element.Fornavn + element.Efternavn}</p><p>E-Mail: ${element.Email}</p><p>Besked: ${element.Besked}</p><p><a href="http://localhost:1337/kontakt/${element.ID}"><button>Slet?</button></a></p></div>`;
+                    document.getElementById('panel-body').innerHTML += `<div><p>ID: ${element.ID}</p><p>navn: ${element.Fornavn + element.Efternavn}</p><p>E-Mail: ${element.Email}</p><p>Besked: ${element.Besked}</p><p><a href="http://localhost:1337/kontakt/${element.ID}"><button>Slet?</button></a></p></div>`; //udskriv elementer i det overliggende med ID'et 'Panel-body'
                 }, this);
             })
         document.addEventListener("DOMContentLoaded", event => {
-            if (localStorage.getItem('token') === null) {
-                window.location.assign('../login.html');
+            if (localStorage.getItem('token') === null) { //Hvis local storage ikke indeholder token udfør
+                window.location.assign('../login.html'); // Redirect til login.html
             } else {
                 console.log(localStorage.getItem('token'));
             }
