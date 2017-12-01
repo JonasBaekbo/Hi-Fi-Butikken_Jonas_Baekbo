@@ -24,7 +24,7 @@
         },
         'mode': 'cors',
         'cache': 'default'
-    }
+    })
         .then((response) => {
             return response.json();
         })
