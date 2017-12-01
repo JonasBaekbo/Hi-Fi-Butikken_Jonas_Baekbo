@@ -16,7 +16,7 @@
 
     var param = JSON.stringify(url)
     console.log(url)
-    fetch(`http://localhost:1337/producent`, {
+    fetch(`http://128.199.57.136:1337/producent`, {
         'method': 'GET',
         'headers': {
             'Authorization': localStorage.getItem('token'),
@@ -39,7 +39,7 @@
                 placeholder.appendChild(option);
             })
         });
-    fetch(`http://localhost:1337/kategori`, {
+    fetch(`http://128.199.57.136:1337/kategori`, {
         'method': 'GET',
         'headers': {
             'Authorization': localStorage.getItem('token'),
@@ -66,7 +66,7 @@
     if (url.id != null) { //Hvis der er et url parameter med navnet id
         var input = url.id; // variabel input som indeholder url parametret id
         // Visning af et produkt på admin siden // Redigering af eksisterende produkter på admin siden
-        fetch(`http://localhost:1337/produkt/${input}`, { //Fetch et produkt med idet som er i input via HTTP metoden GET
+        fetch(`http://128.199.57.136:1337/produkt/${input}`, { //Fetch et produkt med idet som er i input via HTTP metoden GET
             'method': 'GET',
             'headers': {
                 'Authorization': localStorage.getItem('token'),
@@ -110,7 +110,7 @@
                         } else {
                             let form = document.querySelector('#productForm form');
                             let data = new FormData(form); // Få fat i formular dataen
-                            let url = `http://localhost:1337/produkt/${input}`;
+                            let url = `http://128.199.57.136:1337/produkt/${input}`;
                             let init = {
                                 'method': 'put',
                                 'headers': {

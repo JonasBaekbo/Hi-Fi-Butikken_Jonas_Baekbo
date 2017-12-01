@@ -19,7 +19,7 @@
     if (url.search != null) {
         console.log('HEJ');
         var input = url.search;
-        fetch('http://localhost:1337/produkt/soeg/' + url.search) // Fetch fra http://localhost:1337/produkt/soeg/ med parametret url.search og udskriv i elementet med ID'et content
+        fetch('http://128.199.57.136:1337/produkt/soeg/' + url.search) // Fetch fra http://128.199.57.136:1337/produkt/soeg/ med parametret url.search og udskriv i elementet med ID'et content
             .then((response) => {
                 return response.json();
             })
@@ -35,7 +35,7 @@
     else {
         function alle() {
             const placeholder = document.querySelector('#content');
-            fetch('http://localhost:1337/produkt').then((response) => {  // Fetch fra http://localhost:1337/produkt og udskriv i elementet med ID'et content
+            fetch('http://128.199.57.136:1337/produkt').then((response) => {  // Fetch fra http://128.199.57.136:1337/produkt og udskriv i elementet med ID'et content
                 return response.json();
             })
                 .then(function (data) {
@@ -63,12 +63,12 @@
 
         };
         function en(varenr) {
-            fetch(`http://localhost:1337/produkt/${varenr}`) // Fetch fra http://localhost:1337/produkt/ med parametret varenr og udskriv i elementet med ID'et content
+            fetch(`http://128.199.57.136:1337/produkt/${varenr}`) // Fetch fra http://128.199.57.136:1337/produkt/ med parametret varenr og udskriv i elementet med ID'et content
                 .then((response) => {
                     return response.json();
                 })
                 .then((data) => {
-                    document.getElementById('content').innerHTML = `<a href="produkt.html">Tilbage til alle produkter</a><br><br><img src="http://localhost:1337/images/${data[0].billede}" alt="${data[0].navn}"><h3>${data[0].navn}</h3><p>Pris: ${data[0].pris}</p><p>Producent: ${data[0].producent}</p><p>Kategori: ${data[0].kategori}</p><p>Beskrivelse:<br> ${data[0].beskrivelse}</p>`;
+                    document.getElementById('content').innerHTML = `<a href="produkt.html">Tilbage til alle produkter</a><br><br><img src="http://128.199.57.136:1337/images/${data[0].billede}" alt="${data[0].navn}"><h3>${data[0].navn}</h3><p>Pris: ${data[0].pris}</p><p>Producent: ${data[0].producent}</p><p>Kategori: ${data[0].kategori}</p><p>Beskrivelse:<br> ${data[0].beskrivelse}</p>`;
                 })
         }
         document.addEventListener('DOMContentLoaded', function () {
@@ -76,7 +76,7 @@
                 en(url.produkt);
             }
             else if (url.kategori != null) {
-                fetch('http://localhost:1337/kategori/' + url.kategori) // Fetch fra http://localhost:1337/kategori/ med parametret url.kategori og udskriv i elementet med ID'et content
+                fetch('http://128.199.57.136:1337/kategori/' + url.kategori) // Fetch fra http://128.199.57.136:1337/kategori/ med parametret url.kategori og udskriv i elementet med ID'et content
                     .then((response) => {
                         return response.json();
                     })

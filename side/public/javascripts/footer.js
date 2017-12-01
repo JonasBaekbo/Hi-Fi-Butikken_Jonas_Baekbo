@@ -1,5 +1,5 @@
-// Fetch fra http://localhost:1337/kategori og udskriv i elementet med ID'et footerkat
-fetch("http://localhost:1337/kategori").then((response) => {
+// Fetch fra http://128.199.57.136:1337/kategori og udskriv i elementet med ID'et footerkat
+fetch("http://128.199.57.136:1337/kategori").then((response) => {
     return response.json();
 }).then((data) => {
     data.forEach(function (element) {

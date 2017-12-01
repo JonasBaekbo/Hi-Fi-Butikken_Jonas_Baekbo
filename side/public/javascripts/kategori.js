@@ -21,7 +21,7 @@
         var input = url.kategori;
         console.log(url.kategori);
         // alert('HEJ FRA ALERT')
-        fetch('http://localhost:1337/kategori' + url.kategori) // Fetch fra http://localhost:1337/kategori og udskriv i elementet med ID'et content
+        fetch('http://128.199.57.136:1337/kategori' + url.kategori) // Fetch fra http://128.199.57.136:1337/kategori og udskriv i elementet med ID'et content
             .then((response) => {
                 return response.json();
             })

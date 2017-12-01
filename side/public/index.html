@@ -110,7 +110,7 @@
         </div>
         </footer>
         <script>
-            fetch('http://localhost:1337/forside') //Fetch fra http://localhost:1337/forside og udskriv elementer i ID'et content og img
+            fetch('http://128.199.57.136:1337/forside') //Fetch fra http://128.199.57.136:1337/forside og udskriv elementer i ID'et content og img
                 .then((response) => {
                     return response.json();
                 })
@@ -118,7 +118,7 @@
                     console.log(data);
                     for (let i = 0; i < 2; i++) {
                         document.getElementById('content' + i).innerHTML = '' + data[i].navn + '<br>' + data[i].beskrivelse.substring(0, 9) + '...' + '<br>' + ' <a href="produkt.html?produkt=' + data[i].ID + '">Læs mere</a>';
-                        document.getElementById('img' + i).setAttribute("src", 'http://localhost:1337/images/' + data[i].billede);
+                        document.getElementById('img' + i).setAttribute("src", 'http://128.199.57.136:1337/images/' + data[i].billede);
                     }
 
                 })
