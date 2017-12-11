@@ -120,7 +120,7 @@
             .then((data) => {
                 data.forEach(function (element, index) {
                     console.log(element);
-                    document.getElementById('panel-body').innerHTML += `<div><p>ID: ${element.ID}</p><p>navn: ${element.Fornavn + element.Efternavn}</p><p>E-Mail: ${element.Email}</p><p>Besked: ${element.Besked}</p><p><a href="http://http://128.199.57.136:1337/kontakt/${element.ID}"><button>Slet?</button></a></p></div>`; //udskriv elementer i det overliggende med ID'et 'Panel-body'
+                    document.getElementById('panel-body').innerHTML += `<div><p>ID: ${element.ID}</p><p>navn: ${element.Fornavn + element.Efternavn}</p><p>E-Mail: ${element.Email}</p><p>Besked: ${element.Besked}</p><p><a href="http://128.199.57.136:1337/kontakt/${element.ID}"><button>Slet?</button></a></p></div>`; //udskriv elementer i det overliggende med ID'et 'Panel-body'
                 }, this);
             })
         document.addEventListener("DOMContentLoaded", event => {
