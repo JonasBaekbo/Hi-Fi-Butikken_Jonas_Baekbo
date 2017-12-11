@@ -111,7 +111,7 @@ module.exports = (app) => {
                     console.log(Date(), err);
                     res.status(500);
                 } else {
-                    res.writeHead(302, { 'Location': 'http://Localhost:3000/index.html' });
+                    res.writeHead(302, { 'Location': 'http://128.199.57.136:3000/index.html' });
                     res.end();
                 }
             });
