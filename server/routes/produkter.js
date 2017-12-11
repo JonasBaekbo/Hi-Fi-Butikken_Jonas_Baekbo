@@ -8,7 +8,7 @@ const security = require('../services/security');
 module.exports = (app) => {
     app.get('/images/:name', (req, res, next) => {
         // det er kun jpg eller png filer jeg ønsker at tillade adgang til her
-        if (path.extname(req.params.name) == '.jpg' || path.extname(req.params.name) == '.png') {
+        if (path.extname(req.params.name) == '.jpg' || path.extname(req.params.name) == '.png' || path.extname(req.params.name) == '.gif') {
             // forsøg at læs billede filen fra images mappen...
             fs.readFile('./images/' + req.params.name, function (err, file) {
                 if (err) {
